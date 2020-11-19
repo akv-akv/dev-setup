@@ -172,6 +172,10 @@ noremap K :SuperMan <cword><CR>
 " .. exit editing mode with jj
 imap jj <Esc>
 
+" .. copy to clipboard
+vmap '' :w !pbcopy<CR><CR>
+
+
 
 set hlsearch
 
