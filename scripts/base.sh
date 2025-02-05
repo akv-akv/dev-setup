@@ -4,12 +4,17 @@ show_menu() {
   echo "\nMacOS Setup Script"
   echo "0) Exit"
   echo "1) Adjust macOS Settings"
+  echo "2) XCode Developer Tools"
   echo "Select an option:"
   read -r choice
 }
 
 adjust_macos_settings() {
   e_pending "Adjusting macOS settings"
+
+  # Creating necessary folders
+  mkdir -p ~/Developer
+  mkdir -p ~/Sandbox
   
   # Dock & Mission Control
   e_message "Enabling Dock auto-hide"
@@ -34,14 +39,11 @@ adjust_macos_settings() {
   killall Finder
   
   # Keyboard & Input
-  e_message "Disabling press-and-hold for keys"
-  defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
-  
   e_message "Increasing key repeat speed"
-  defaults write NSGlobalDomain KeyRepeat -int 1
+  defaults write NSGlobalDomain KeyRepeat -int 2
   
   e_message "Decreasing delay before key repeat"
-  defaults write NSGlobalDomain InitialKeyRepeat -int 10
+  defaults write NSGlobalDomain InitialKeyRepeat -int 15
   
   # Trackpad & Mouse
   e_message "Enabling tap to click"
@@ -51,8 +53,9 @@ adjust_macos_settings() {
   defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true
   
   # Terminal & Shell
-  e_message "Setting screenshot save location to ~/Screenshots"
-  defaults write com.apple.screencapture location -string "~/Screenshots"
+  e_message "Setting screenshot save location to ~/Documents/Screenshots"
+  mkdir -p ~/Documents/Screenshots
+  defaults write com.apple.screencapture location -string "~/Documents/Screenshots"
   killall SystemUIServer
   
   # Security & Privacy
@@ -62,11 +65,22 @@ adjust_macos_settings() {
   e_success "macOS settings adjusted."
 }
 
+install_xcode_tools() {
+  if has_command "xcode-select"; then
+    e_success "Xcode Command Line Tools already installed."
+  else
+    e_pending "Installing Xcode Command Line Tools"
+    xcode-select --install
+    e_success "Xcode Command Line Tools installed."
+  fi
+}
+
 while true; do
   show_menu
   case $choice in
 	  0) break;;
 	  1) adjust_macos_settings;;
+    2) install_xcode_tools;;
 	  *) e_failure "Invalid option. Please try again.";;
   esac
 done
