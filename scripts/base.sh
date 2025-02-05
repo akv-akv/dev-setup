@@ -5,6 +5,7 @@ show_menu() {
   echo "0) Exit"
   echo "1) Adjust macOS Settings"
   echo "2) XCode Developer Tools"
+  echo "3) Homebrew"
   echo "Select an option:"
   read -r choice
 }
@@ -75,12 +76,23 @@ install_xcode_tools() {
   fi
 }
 
+install_homebrew() {
+  if has_command "brew"; then
+    e_success "Homebrew already installed."
+  else
+    e_pending "Installing Homebrew"
+    sudo curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
+    e_success "Homebrew installed."
+  fi
+}
+
 while true; do
   show_menu
   case $choice in
 	  0) break;;
 	  1) adjust_macos_settings;;
     2) install_xcode_tools;;
+    3) install_homebrew;;
 	  *) e_failure "Invalid option. Please try again.";;
   esac
 done
