@@ -17,13 +17,13 @@ ln -sf ~/.dev-setup/dotfiles/zshrc ~/.zshrc
 
 # Install Plugins via Homebrew
 brew install powerlevel10k
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 # Install Powerlevel10k
 mkdir -p ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes
 ln -sf $(brew --prefix)/share/powerlevel10k ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
 
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 # Restart Zsh session properly
 echo "Restart your terminal or run 'exec zsh' to apply changes."
