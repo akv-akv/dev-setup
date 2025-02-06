@@ -4,6 +4,7 @@ tap "romkatv/powerlevel10k"
 
 # Shells
 brew "zsh"
+brew "romkatv/powerlevel10k/powerlevel10k"
 brew "nushell"
 
 # Shell utilities
