@@ -16,16 +16,19 @@ This repository provides an automated setup on MacOS for software development pu
 If `git` is not installed yet:
 ```sh
 cd ~
+mkdir -p ~/.dev-setup ~/.dev-setup-temp
 curl -L -o repo.zip https://github.com/akv-akv/dev-setup/archive/refs/heads/master.zip
-unzip repo.zip
+unzip repo.zip -d ~/.dev-setup-temp/
+mv ~/.dev-setup-temp/dev-setup-master/* ~/.dev-setup/
+rm -rf ~/.dev-setup-temp/
 rm repo.zip
-cd dev-setup/master
+cd ~/.dev-setup
 ```
 
 Otherwise just clone repo using git:
 ```sh
 cd ~
-git clone https://github.com/akv-akv/dev-setup.git
+git clone https://github.com/akv-akv/dev-setup.git ./.dev-setup
 ```
 
 ### 2. Run the Setup Script

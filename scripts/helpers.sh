@@ -1,7 +1,7 @@
 #!/bin/bash
 
 e_message() {
-  printf "\n✨  %s\n\n" "$@"
+  printf "\n✨  %s\n" "$@"
 }
 
 e_status() {
