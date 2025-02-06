@@ -52,5 +52,20 @@ install_if_missing() {
   fi
 }
 
+install_if_exists() {
+  local cmd="$1"      # The command to check (e.g., brew, xcode-select)
+  local install_cmd="$2"  # The installation command
+  local description="$3"  # Human-readable description of the tool
+
+  if has_command "$cmd"; then
+    e_pending "Installing tools depending on $description..."
+    echo "$install_cmd"
+    eval "$install_cmd"  # Run the provided installation command
+    e_success "Installed tools depending on $description."
+  else
+    e_failure "$description is not installed yet."
+  fi
+}
+
 [[ $OSTYPE == darwin* ]] || { e_failure "Unsupported operating system (macOS only)"; exit 1; }
 
