@@ -1,6 +1,7 @@
 source ./scripts/helpers.sh
 source ./scripts/macos_settings.sh
 source ./scripts/base.sh
+source ./scripts/dotfiles.sh
 
 show_menu() {
   echo "\nMacOS Setup Script"
@@ -11,6 +12,7 @@ show_menu() {
   echo "4) Homebrew"
   echo "5) Install apps using Homebrew"
   echo "6) Install DevBox"
+  echo "7) Apply dotfiles and settings"
   echo "Select an option:"
   read -r choice
 }
@@ -21,6 +23,7 @@ run_all_commands() {
   install_homebrew
   install_apps_using_homebrew
   install_devbox
+  apply_dotfiles_and_settings
 }
 
 while true; do
