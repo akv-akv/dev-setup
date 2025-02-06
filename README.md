@@ -16,6 +16,7 @@ This repository provides an automated setup on MacOS for software development pu
 If `git` is not installed yet:
 ```sh
 cd ~
+rm -rf ~/.dev-setup/
 mkdir -p ~/.dev-setup ~/.dev-setup-temp
 curl -L -o repo.zip https://github.com/akv-akv/dev-setup/archive/refs/heads/master.zip
 unzip repo.zip -d ~/.dev-setup-temp/
