@@ -5,11 +5,12 @@ source ./scripts/base.sh
 show_menu() {
   echo "\nMacOS Setup Script"
   echo "0) Exit"
-  echo "1) Run all commands"
+  echo "1) Run all steps (2+)"
   echo "2) Adjust macOS Settings"
   echo "3) XCode Developer Tools"
   echo "4) Homebrew"
   echo "5) Install apps using Homebrew"
+  echo "6) Install DevBox"
   echo "Select an option:"
   read -r choice
 }
@@ -19,6 +20,7 @@ run_all_commands() {
   install_xcode_tools
   install_homebrew
   install_apps_using_homebrew
+  install_devbox
 }
 
 while true; do
@@ -30,6 +32,7 @@ while true; do
     3) install_xcode_tools;;
     4) install_homebrew;;
     5) install_apps_using_homebrew;;
+    6) install_devbox;;
 	  *) e_failure "Invalid option. Please try again.";;
   esac
 done

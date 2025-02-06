@@ -38,5 +38,19 @@ get_consent() {
   printf "\n"
 }
 
+install_if_missing() {
+  local cmd="$1"      # The command to check (e.g., brew, xcode-select)
+  local install_cmd="$2"  # The installation command
+  local description="$3"  # Human-readable description of the tool
+
+  if has_command "$cmd"; then
+    e_success "$description already installed."
+  else
+    e_pending "Installing $description..."
+    eval "$install_cmd"  # Run the provided installation command
+    e_success "$description installed."
+  fi
+}
+
 [[ $OSTYPE == darwin* ]] || { e_failure "Unsupported operating system (macOS only)"; exit 1; }
 

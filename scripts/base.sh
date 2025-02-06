@@ -1,30 +1,32 @@
 install_xcode_tools() {
-  if has_command "xcode-select"; then
-    e_success "Xcode Command Line Tools already installed."
-  else
-    e_pending "Installing Xcode Command Line Tools"
-    xcode-select --install
-    e_success "Xcode Command Line Tools installed."
-  fi
+  install_if_missing \
+    "xcode-select" \
+    "xcode-select --install" \
+    "Xcode Command Line Tools"
 }
 
 install_homebrew() {
-  if has_command "brew"; then
-    e_success "Homebrew already installed."
-  else
-    e_pending "Installing Homebrew"
-    sudo curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
-    e_success "Homebrew installed."
-  fi
+  install_if_missing \
+    "brew" \
+    "sudo curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash" \
+    "Homebrew"
+}
+
+install_devbox() {
+  install_if_missing \
+    "devbox" \
+    "curl -fsSL https://get.jetify.com/devbox | bash" \
+    "Devbox"
 }
 
 install_apps_using_homebrew() {
   if has_command "brew"; then
     e_pending "Installing Apps Using Homebrew"
+    brew doctor
+    brew upgrade
     brew bundle --file ./scripts/Brewfile --no-upgrade
     e_success "Apps installed."
   else
     e_failure "Install Homebrew first"
   fi
 }
-

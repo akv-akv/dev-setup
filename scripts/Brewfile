@@ -27,6 +27,7 @@ brew "azure-cli"
 
 # Programming languages
 brew "python"
+brew "pyenv"
 brew "go"
 brew "rust"
 
