@@ -1,6 +1,10 @@
-# dotfiles
+# Installation
 
-## Installation
+```shell
+./install.sh
+```
+
+## Vim Installation
 
 
 ```

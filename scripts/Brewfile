@@ -1,0 +1,37 @@
+# Taps
+tap "derailed/k9s"
+
+# Shells
+brew "zsh"
+brew "nushell"
+
+# Shell utilities
+brew "wget"
+brew "tree"
+brew "vim"
+
+# Dev tools
+brew "git"
+
+# Containers
+brew "colima"
+brew "docker"
+brew "derailed/k9s/k9s"
+brew "argocd"
+brew "kubectl"
+brew "helm"
+
+# Cloud CLIs
+brew "awscli"
+brew "azure-cli"
+
+# Programming languages
+brew "python"
+brew "go"
+brew "rust"
+
+# Applications
+cask "iterm2"
+cask "visual-studio-code"
+cask "obsidian"
+cask "arc"
