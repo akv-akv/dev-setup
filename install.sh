@@ -33,6 +33,7 @@ while true; do
     4) install_homebrew;;
     5) install_apps_using_homebrew;;
     6) install_devbox;;
+    7) apply_dotfiles_and_settings;;
 	  *) e_failure "Invalid option. Please try again.";;
   esac
 done

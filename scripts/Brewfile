@@ -31,6 +31,9 @@ brew "pyenv"
 brew "go"
 brew "rust"
 
+# AI
+brew "ollama"
+
 # Applications
 cask "iterm2"
 cask "visual-studio-code"
