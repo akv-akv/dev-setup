@@ -11,6 +11,8 @@ brew "nushell"
 brew "wget"
 brew "tree"
 brew "vim"
+brew "neovim"
+brew "ripgrep"
 
 # Dev tools
 brew "git"

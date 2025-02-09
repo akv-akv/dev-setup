@@ -26,3 +26,6 @@ source $ZSH/oh-my-zsh.sh
 # Source iTerm2 shell integration if exists
 test -e "\${HOME}/.iterm2_shell_integration.zsh" && source "\${HOME}/.iterm2_shell_integration.zsh" || true
 POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+
+# aliases
+alias vim=nvim
