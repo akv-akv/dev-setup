@@ -29,14 +29,14 @@ run_all_commands() {
 while true; do
   show_menu
   case $choice in
-	  0) break;;
-    1) run_all_commands;;
+	0) break;;
+    	1) run_all_commands;;
   	2) adjust_macos_settings;;
-    3) install_xcode_tools;;
-    4) install_homebrew;;
-    5) install_apps_using_homebrew;;
-    6) install_devbox;;
-    7) apply_dotfiles_and_settings;;
-	  *) e_failure "Invalid option. Please try again.";;
+    	3) install_xcode_tools;;
+    	4) install_homebrew;;
+    	5) install_apps_using_homebrew;;
+    	6) install_devbox;;
+    	7) apply_dotfiles_and_settings;;
+	*) e_failure "Invalid option. Please try again.";;
   esac
 done
