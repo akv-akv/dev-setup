@@ -50,6 +50,9 @@ adjust_macos_settings() {
   # Security & Privacy
   e_message "Preventing .DS_Store files on network volumes"
   defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+  # Bluetooth icon
+  defaults write com.apple.controlcenter "NSStatusItem Visible Bluetooth" -bool true
   
   e_success "macOS settings adjusted."
 }
