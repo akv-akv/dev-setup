@@ -21,6 +21,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 # Install Powerlevel10k
 mkdir -p ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
 ln -sf $(brew --prefix)/share/powerlevel10k ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
 ln -sf ~/.dev-setup/dotfiles/.p10k.zsh ~/.p10k.zsh
 
