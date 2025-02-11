@@ -10,4 +10,7 @@ apply_dotfiles_and_settings() {
         "zsh" \
         "$(cat ./scripts/tools/zsh.sh)" \
         "Zsh"
+    
+    # Nvim config
+    ln -s ~/.dev-setup/dotfiles/nvim ~/.config/nvim
 }   
