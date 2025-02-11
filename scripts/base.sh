@@ -8,7 +8,7 @@ install_xcode_tools() {
 install_homebrew() {
   install_if_missing \
     "brew" \
-    "sudo curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash" \
+    'sudo curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash && export PATH="/opt/homebrew/bin:$PATH"' \
     "Homebrew"
 }
 
