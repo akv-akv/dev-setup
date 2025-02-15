@@ -13,4 +13,9 @@ apply_dotfiles_and_settings() {
     
     # Nvim config
     ln -s ~/.dev-setup/dotfiles/nvim ~/.config/nvim
+
+    # Java
+    sudo ln -sfn /opt/homebrew/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk
+    sudo ln -sfn /opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-17.jdk
+
 }   

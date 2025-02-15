@@ -29,8 +29,18 @@ require('lazy').setup({
       "nvim-tree/nvim-web-devicons",
     },
     config = function()
-        require("nvim-tree").setup {}
-      end,
+        require("nvim-tree").setup {
+            sort = {
+              sorter = "case_sensitive",
+            },
+            view = {
+              width = 50,
+            },
+            renderer = {
+              group_empty = true,
+            },
+        }
+    end,
   },
 
   -- Save and load buffers (a session) automatically for each folder

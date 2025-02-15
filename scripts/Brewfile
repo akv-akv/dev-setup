@@ -34,6 +34,10 @@ brew "python"
 brew "pyenv"
 brew "go"
 brew "rust"
+brew "jenv"
+brew "openjdk@11"
+brew "openjdk@17"
+brew "maven"
 
 # AI
 brew "ollama"
